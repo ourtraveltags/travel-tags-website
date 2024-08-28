@@ -1,0 +1,494 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+/* Header styling */
+header {
+    background-color: #333; /* Background color of the header */
+    padding: 20px 0; /* Thickness of the header */
+    position: relative;
+}
+
+/* Navigation menu styling */
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    display: flex; /* Align items in a row */
+    justify-content: flex-end; /* Align menu to the right */
+    margin-right: 20px; /* Space between the right edge and the menu */
+}
+
+nav ul li {
+    position: relative; /* Necessary for dropdown positioning */
+}
+
+nav ul li a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Space around the text */
+    display: block; /* Make the anchor take up the full height */
+    font-size: 1.2em; /* Increase font size */
+    text-align: center; /* Center text horizontally */
+    line-height: 20px; /* Center text vertically within the padding */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Darker background on hover */
+}
+
+
+/* Dropdown menu styling */
+.dropdown {
+    position: relative; /* Ensure the dropdown container is positioned */
+}
+
+.dropdown-content {
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    background-color: #333; /* Same color as the header */
+    min-width: 160px; /* Minimum width for dropdown */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+}
+
+.dropdown-content li a {
+    padding: 10px 20px; /* Padding for dropdown items */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show the dropdown on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* Navigation Bar */
+.fixed-nav {
+    position: static; /* Start with static positioning */
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 10px 20px;
+    width: 100%;
+    transition: top 0.3s;
+    z-index: 1000; /* Ensure it appears above content when sticky */
+}
+
+.fixed-nav.sticky {
+    position: fixed; /* Become fixed when user scrolls */
+    top: 0;
+    left: 0;
+}
+
+/* Additional styling for the navigation links */
+.fixed-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center align the navigation links */
+}
+
+.fixed-nav ul li {
+    margin: 0 15px; /* Space between navigation items */
+}
+
+.fixed-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fixed-nav ul li a:hover {
+    color: #90c794; /* Change color on hover */
+}
+
+
+
+/* Introduction Section */
+.introduction {
+    text-align: center; /* Center the content including the title and text */
+    padding: 20px; /* Add some padding around the section */
+}
+
+/* Single Image Styling */
+.intro-image {
+    width: 100%;
+    margin-bottom: 20px; /* Space between the image and the title */
+}
+
+.intro-image img {
+    width: 100%; /* Fixed width for the image */
+    height: 550px; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 8px; /* Rounded corners for the image */
+}
+
+
+.introduction h1 {
+    font-size: 3em; /* Larger font size for the title */
+    color: #333; /* Dark color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.introduction p {
+    font-size: 1.2em; /* Slightly larger font size for the paragraph */
+    color: #555; /* Darker grey color for the text */
+    line-height: 1.6; /* Line height for better readability */
+    margin-bottom: 30px; /* Space below the paragraph */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Itinerary Section */
+.itinerary-section {
+    text-align: center; /* Center the title */
+    padding: 0px; /* Add padding around the section */
+}
+
+.itinerary-section h2 {
+    font-size: 2.5em; /* Larger font size for the title */
+    color: #333; /* Darker color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.itinerary-section h3 {
+    font-size: 1.5em; /* Larger font size for the title */
+    color: #333; /* Darker color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.itinerary-section h4 {
+    font-size: 1.5em; /* Larger font size for the title */
+    color: #333; /* Darker color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: left;
+    padding: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Container for Image and Days */
+.itinerary-container {
+    display: flex; /* Flexbox layout for the two columns */
+    gap: 0px; /* Space between the image and the days */
+}
+
+/* Map Image Container */
+.map-container {
+    width: 50%; /* Map takes up 50% of the width */
+    height: auto;
+}
+
+.map-container img {
+    width: 100%;
+    height: 700px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+/* Days Container */
+.days-container {
+    width: 50%;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack the days vertically */
+    align-items: flex-start; /* Align items to the start of the container */
+}
+
+/* Day Item */
+.day-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Space between day items */
+}
+
+/* Day Circle */
+.day-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #a594e4; /* Dark color for the circle */
+    color: #ffffff; /* White text inside the circle */
+    border-radius: 50%; /* Make the div a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    margin-right: 15px; /* Space between circle and text */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Day Description */
+.day-description p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 0;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .itinerary-container {
+        flex-direction: column; /* Stack the image and days vertically on smaller screens */
+    }
+
+    .map-container,
+    .days-container {
+        width: 100%; /* Full width for each on smaller screens */
+    }
+}
+
+/* Remove default link styling */
+.day-item a {
+    text-decoration: none;
+    color: #fff; /* Keep the original color */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Change cursor to pointer to indicate clickable */
+.day-item a {
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Optional: Change color on hover */
+.day-item a:hover {
+    color: #ffffff; /* Change text color on hover */
+}
+
+.day-circle:hover {
+    background-color: #555; /* Change circle color on hover */
+}
+
+.day-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.day-text, .day-image {
+    flex: 1;
+    padding: 0px;
+}
+
+.day-text {
+    text-align: left; /* Text alignment for the left half */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.day-text h3 {
+    font-size: 1.5em; /* Larger font size for the title */
+    color: #333; /* Darker color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.day-text p {
+    font-size: 1.1em;
+    color: #555;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.day-image img {
+    width: 100%;
+    height: 800px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+
+/* Layout direction for normal and reversed sections */
+.day-section:not(.reverse) .day-content {
+    flex-direction: row;
+}
+
+.day-section.reverse .day-content {
+    flex-direction: row-reverse;
+}
+
+
+/* Example usage of --navbar-height variable */
+:root {
+    --navbar-height: 60px; /* Adjust this value to match the height of your navbar */
+}
+
+/* General Section Styling */
+section {
+    scroll-margin-top: var(--navbar-height); /* Ensure smooth scrolling */
+    margin: 0;
+}
+
+
+/* Collapsible button styling */
+.collapsible {
+    background-color: #a594e4; /* Example button color */
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 1.2em;
+    width: 100%;
+    margin-top: 10px; /* Space above the button */
+}
+
+/* Collapsible content */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 10px;
+    background-color: #f1f1f1; /* Example content background */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.collapsible-content p {
+    margin: 10px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Styling for the interactive map container */
+.map-section {
+    margin: 0px 0; /* Add spacing between sections */
+}
+
+/* Apply negative margin to offset translateY effect */
+.map-section + section {
+    margin-top: -60px; /* Match the translateY value or adjust as needed */
+}
+
+
+.interactive-map-container {
+    width: 100%;
+    height: 560px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.interactive-map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    transform: translateY(-60px); /* Adjust value as needed */
+}
+
+
+
+
+/* Section Two Layout */
+/* Section Two Layout */
+/* Section Two Layout */
+
+.section-two {
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+
+/* Title Container */
+.title-container {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Title Styling */
+.title-container h2 {
+    font-size: 2.5em; /* Larger font size for the title */
+    color: #333; /* Darker color for the title */
+    margin: 0; /* Remove default margin to align spacing */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Container for the two columns */
+.section-content {
+    display: flex; /* Use flexbox to align items side by side */
+    justify-content: space-between; /* Space out the columns */
+    align-items: flex-start; /* Align items at the top */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Left side text content */
+.text-content {
+    flex: 2; /* Take up more space compared to the checklist box */
+    padding: 20px; /* Add padding around the text */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Right side checklist box */
+.checklist-box {
+    flex: 1; /* Take up less space compared to the text content */
+    padding: 20px; /* Add padding inside the box */
+    border: 4px solid #333; /* Light border for the box */
+    border-radius: 10px; /* Curved corners for the box */
+}
+
+/* Checklist box heading */
+.checklist-box h3 {
+    margin-top: 0; /* Remove default margin on top */
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Checklist items */
+.checklist-box ul {
+    list-style-type: none; /* Bullet points for checklist items */
+    padding-left: 10px; /* Add space before the list items */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* List items */
+.checklist-box li {
+    margin-bottom: 10px; /* Space between checklist items */
+    position: relative; /* Position relative to allow for pseudo-element positioning */
+    padding-left: 30px; /* Space for the checkmark */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Checkmark before each list item */
+.checklist-box li::before {
+    content: '\2713'; /* Unicode checkmark character */
+    font-size: 1.2em; /* Size of the checkmark */
+    color: #90c794; /* Color of the checkmark */
+    position: absolute; /* Absolute positioning for placement */
+    left: 0; /* Position on the left */
+    top: 0; /* Align with the top of the list item */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-content {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+    }
+
+    .text-content, .checklist-box {
+        flex: 1; /* Both columns take equal width on smaller screens */
+        margin-bottom: 20px; /* Space between stacked columns */
+    }
+}

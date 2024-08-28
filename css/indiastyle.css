@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+/* Header styling */
+header {
+    background-color: #333; /* Background color of the header */
+    padding: 20px 0; /* Thickness of the header */
+    position: relative;
+}
+
+/* Navigation menu styling */
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    display: flex; /* Align items in a row */
+    justify-content: flex-end; /* Align menu to the right */
+    margin-right: 20px; /* Space between the right edge and the menu */
+}
+
+nav ul li {
+    position: relative; /* Necessary for dropdown positioning */
+}
+
+nav ul li a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Space around the text */
+    display: block; /* Make the anchor take up the full height */
+    font-size: 1.2em; /* Increase font size */
+    text-align: center; /* Center text horizontally */
+    line-height: 20px; /* Center text vertically within the padding */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Darker background on hover */
+}
+
+
+/* Dropdown menu styling */
+.dropdown {
+    position: relative; /* Ensure the dropdown container is positioned */
+}
+
+.dropdown-content {
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    background-color: #333; /* Same color as the header */
+    min-width: 160px; /* Minimum width for dropdown */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+}
+
+.dropdown-content li a {
+    padding: 10px 20px; /* Padding for dropdown items */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show the dropdown on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* Navigation Bar */
+.fixed-nav {
+    position: static; /* Start with static positioning */
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 10px 20px;
+    width: 100%;
+    transition: top 0.3s;
+    z-index: 1000; /* Ensure it appears above content when sticky */
+}
+
+.fixed-nav.sticky {
+    position: fixed; /* Become fixed when user scrolls */
+    top: 0;
+    left: 0;
+}
+
+/* Additional styling for the navigation links */
+.fixed-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center align the navigation links */
+}
+
+.fixed-nav ul li {
+    margin: 0 15px; /* Space between navigation items */
+}
+
+.fixed-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fixed-nav ul li a:hover {
+    color: #90c794; /* Change color on hover */
+}
+
+
+
+/* Introduction Section */
+.introduction {
+    text-align: center; /* Center the content including the title and text */
+    padding: 20px; /* Add some padding around the section */
+}
+
+/* Single Image Styling */
+.intro-image {
+    width: 100%;
+    margin-bottom: 20px; /* Space between the image and the title */
+}
+
+.intro-image img {
+    width: 100%; /* Fixed width for the image */
+    height: 550px; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 8px; /* Rounded corners for the image */
+}
+
+
+.introduction h1 {
+    font-size: 3em; /* Larger font size for the title */
+    color: #333; /* Dark color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.introduction p {
+    font-size: 1.2em; /* Slightly larger font size for the paragraph */
+    color: #555; /* Darker grey color for the text */
+    line-height: 1.6; /* Line height for better readability */
+    margin-bottom: 30px; /* Space below the paragraph */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
